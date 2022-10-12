@@ -1,4 +1,5 @@
 import { growdeversList } from "../data/growdeversList";
+import { GrowdeverRepository } from "../database/users.repository";
 import { Growdever } from "../models/growdever";
 
 export class GrowdeverController {
@@ -49,6 +50,8 @@ export class GrowdeverController {
   }
 
   public getByCpf(cpf: number) {
-    return growdeversList.find((item) => cpf === cpf);
+    const repository = new GrowdeverRepository();
+
+    return repository.list().find((item) => item._cpf === cpf);
   }
 }

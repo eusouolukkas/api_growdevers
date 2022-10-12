@@ -5,6 +5,6 @@ export const logGetMiddleware = (
   res: Response,
   next: NextFunction
 ) => {
-  console.log("LISTAS TODOS OS GROWDEVERS!");
+  console.log("LISTOU TODOS OS GROWDEVERS!");
   next();
 };
